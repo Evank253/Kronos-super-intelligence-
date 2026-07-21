@@ -1,1 +1,1 @@
-# Kronos-super-intelligence-
+# Kronos-super-intelligence-python scripts/system_check.py
