@@ -1,0 +1,14 @@
+{
+    "package_name": "KCN_EVIDENCE",
+    "generated_at": "2026-07-29 15:17:15.832058+00:00",
+    "contents": [
+        "mission_results/",
+        "attack_logs/",
+        "performance_metrics/",
+        "failure_reports/",
+        "recovery_reports/",
+        "cryptographic_hashes/",
+        "certification_report.json"
+    ],
+    "sha256_sealed": true
+}
