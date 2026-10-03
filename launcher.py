@@ -52,6 +52,7 @@ from agents.astraea_agent import AstraeaAgent
 from agents.hermes_agent import HermesAgent
 from agents.prometheus_agent import PrometheusAgent
 from dashboard.dashboard_data import DashboardData
+from federation.sos_federation import SoSFederation
 
 def main():
     print("=" * 70)
@@ -167,8 +168,27 @@ def main():
     test_executor = KCNTestExecutor(loader)
     core_tests = test_executor.run_core_tests()
 
+    # The existing KCNTestExecutor remains the sole benchmark execution
+    # substrate. The SoS federation is registered as additional tests rather
+    # than introducing a second runner.
+    federation = SoSFederation(
+        loader=loader,
+        runtime=runtime,
+        mission_engine=engine_inst,
+        evidence_collector=collector,
+        governance_evaluation=gov_eval,
+        benchmark_summary=bm_summary,
+        evolution_proposal=proposal,
+        certification=certification,
+    )
+    sos_tests = federation.register_tests(test_executor)
+    all_tests = core_tests + sos_tests
+    federation_receipt = federation.write_receipt(sos_tests)
+    print(f"   - SoS Federation Tests Executed: {len(sos_tests)}")
+    print(f"   - SoS Receipt: {federation_receipt}")
+
     report_gen = ReportGenerator()
-    report_gen.generate(loader, core_tests, "reports/KCN_SYSTEM_STATUS.json")
+    report_gen.generate(loader, all_tests, "reports/KCN_SYSTEM_STATUS.json")
 
     cert_gen = CertificationReportGenerator()
     cert_gen.generate(calculated_score["breakdown"], certification, "reports/KCN_CERTIFICATION_REPORT.json")
