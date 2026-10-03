@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0",
+  "runner": {
+    "name": "KCN/KCIS Master Runtime Harness",
+    "repository": "Evank253/Kronos-super-intelligence-",
+    "launcher": "launcher.py",
+    "launcher_commit": "3bbbe557ddfa1f481fc7f9dca1e90272d2af6877",
+    "role": "existing_master_runner"
+  },
+  "constitutional_rule": "No adapter, capability, evidence, benchmark result, or qualification may create or transfer constitutional authority.",
+  "systems": [
+    {
+      "id": "KCN-KCIS",
+      "role": "cognition_agents_research_security_execution",
+      "path": ".",
+      "mode": "host_runner"
+    },
+    {
+      "id": "BI",
+      "role": "evidence_verification_qualification",
+      "path": "../Super-intelligence-under-human-authority-",
+      "mode": "reference_boundary",
+      "command": [
+        "python3",
+        "benchmark/sos_benchmark.py"
+      ]
+    },
+    {
+      "id": "MANIFEX",
+      "role": "engineering_build_reuse_adaptation_reconstruction_provenance",
+      "path": "../MANIFEX",
+      "mode": "command",
+      "command": [
+        "python3",
+        "manifex/build_index.py",
+        "summary"
+      ]
+    },
+    {
+      "id": "MANIFEX-ENGINEERING-TO-EVIDENCE",
+      "role": "engineering_to_evidence",
+      "path": "../MANIFEX-ENGINEERING-TO-EVIDENCE",
+      "mode": "presence_only"
+    },
+    {
+      "id": "INDEX-MACHINE",
+      "role": "identity_lineage_temporal_capability_history",
+      "path": "../Super-intelligence-under-human-authority-/runtime/sos_runtime",
+      "mode": "reference_boundary"
+    },
+    {
+      "id": "KSI-EMERGENT-INTELLIGENCE",
+      "role": "capability_composition_emergence",
+      "path": "../KSI-EMERGENT-INTELLIGENCE",
+      "mode": "command",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "runner/tests",
+        "-v"
+      ]
+    },
+    {
+      "id": "KSI-BENCHMARK-SUITE",
+      "role": "fixed_holdout_benchmark",
+      "path": "../KSI-Benchmark-Suite",
+      "mode": "command_if_student_endpoint",
+      "command": [
+        "python3",
+        "mlops/run_student_benchmark.py",
+        "--limit",
+        "10"
+      ]
+    },
+    {
+      "id": "KCN-SECURITY-TWIN",
+      "role": "isolated_disposable_challenge_target",
+      "path": "../KCN-SUPER-COGNITIVE-HUMAN-GOVERNED-INTELLIGENCE-ECOSYSTEM-/security-twin",
+      "mode": "optional_docker",
+      "port": 8100
+    },
+    {
+      "id": "SISTER-TWIN-CHALLENGE",
+      "role": "independent_challenge",
+      "path": "../KSI-EMERGENT-INTELLIGENCE/runner/tests/test_adversarial_execution.py",
+      "mode": "covered_by_ksi_tests"
+    },
+    {
+      "id": "HISTORICAL-RECORD",
+      "role": "append_only_historical_state",
+      "path": "../Super-intelligence-under-human-authority-/legacy",
+      "mode": "presence_only"
+    },
+    {
+      "id": "EVOLUTION-RECORD",
+      "role": "separate_change_lineage",
+      "path": "../Super-intelligence-under-human-authority-/evidence",
+      "mode": "presence_only"
+    },
+    {
+      "id": "SOS-CONSTITUTIONAL-CONTROL",
+      "role": "constitutional_control_plane",
+      "path": "../Super-intelligence-under-human-authority-/CONSTITUTION.md",
+      "mode": "presence_only"
+    },
+    {
+      "id": "EXTERNAL-HUMAN-AUTHORITY",
+      "role": "external_final_authority",
+      "path": "../Super-intelligence-under-human-authority-/CONSTITUTION.md",
+      "mode": "boundary_only"
+    }
+  ]
+}
